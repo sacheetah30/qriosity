@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f8ff; /* Light background color for better contrast */
+        font-family: Arial, sans-serif; /* More modern font */
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .upload-form {
+        margin-bottom: 30px;
+    }
+    .qr-box {
+        border: 2px solid #333;
+        padding: 20px;
+        font-size: 20px;
+        width: 80%; /* Allow the box to resize */
+        max-width: 600px; /* Maximum width for the box */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Smooth shadow for better visual appeal */
+        font-weight: bold;
+        background-color: #fff; /* White background for the box */
+        word-wrap: break-word; /* Ensure long content breaks properly */
+        border-radius: 10px; /* Rounded corners for the box */
+        margin: 20px;
+    }
+    .qr-title {
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 20px; /* Adjust bottom margin for better spacing */
+    }
+    input[type="file"] {
+        display: none;
+    }
+    label {
+        background-color: #007BFF; /* Bootstrap primary color */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    label:hover {
+        background-color: #0056b3; /* Slightly darker shade on hover */
+    }
+    input[type="submit"] {
+        background-color: #28a745; /* Bootstrap success color */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    input[type="submit"]:hover {
+        background-color: #218838; /* Slightly darker shade on hover */
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Upload a QR Code Image</h1>
+    <form class="upload-form" action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" required>
+        <label for="file">Choose File</label>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if qr_data %}
+    <div class="qr-box">
+        <h2 class="qr-title">Decoded QR:</h2>
+        <pre>{{ qr_data }}</pre>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
