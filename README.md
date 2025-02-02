@@ -52,7 +52,7 @@ Welcome to QRiosity! This project allows users to upload a QR code image, decode
 ```sh
 qriosity/
 │
-├── flaskkk.py                  # Main Flask app
+├── app.py                  # Main Flask app
 ├── qr_reader.py            # QR code decoding logic
 ├── templates/
 │   └── base.html           # Base HTML template
