@@ -26,8 +26,8 @@ Welcome to QRiosity! This project allows users to upload a QR code image, decode
 
 2. **Set Up a Virtual Environment (Optional but recommended):**
     ```sh
-    python -m venv slay
-    source .\slay\Scripts\activate
+    python -m venv virtual
+    source .\virtual\Scripts\activate
     ```
 
 3. **Install the Required Packages:**
@@ -39,7 +39,7 @@ Welcome to QRiosity! This project allows users to upload a QR code image, decode
 
 1. **Run the Flask Application:**
     ```sh
-    python flaskkk.py
+    python app.py
     ```
 
 2. **Upload and Decode QR Codes:**
